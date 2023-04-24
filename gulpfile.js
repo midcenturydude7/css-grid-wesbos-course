@@ -1,13 +1,18 @@
 var gulp = require("gulp");
-var browserSync = require("browser-sync").create();
+var bs = require("browser-sync").create();
 
 gulp.task("browser-sync", function () {
-  browserSync.init({
+  bs.init({
     proxy: "localhost:7777",
+    browser: "firefox.exe",
+    open: false,
   });
 });
 
-browserSync.init({
+bs.init({
   server: "./",
   firefox: "-browser 'firefox.exe'",
+  proxy: "localhost:7777",
+  browser: "firefox.exe",
+  open: false,
 });
